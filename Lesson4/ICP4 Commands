@@ -1,0 +1,95 @@
+hbase shell
+create 'locations', 'countries'
+put 'countries', '1', 'countries:name', 'China'
+put 'countries', '1', 'countries:parent', ''
+put 'countries', '1', 'countries:child', '1'
+
+create 'student', 'info', 'course'
+put 'student', '1', 'info:name:', 'Tricia'
+put 'student', '1', 'info:sex', 'female'
+put 'student', '1', 'info:age', '25'
+put 'student', '1', 'course:id', '22'
+
+create 'course', 'info', 'student'
+put 'course', '22', 'info:title', 'Big Data'
+put 'course', '22', 'info:introduction', 'Yes'
+put 'course', '22', 'info:teach_id', '1'
+
+create 'user_action', 'action'
+put 'user_action', 1', 'action:user_id', '1'
+put 'user_action', 1', 'action:name', 'tricia'
+put 'user_action', 1', 'action:time', '16:00'
+
+create 'user_friends', 'info', 'friend'
+put 'user_friends', 1', 'info:name', 'tricia'
+put 'user_friends', 1', 'info:sex', 'female'
+put 'user_friends', 1', 'info:age', '25'
+put 'user_friends', 1', 'friend:userid', '22'
+
+create 'accesslog', 'info'
+put 'accesslog', 1', 'info:ip', '1.1.1.1.1'
+put 'accesslog', 1', 'info:domain', 'some domain'
+put 'accesslog', 1', 'info:url', 'www.why.com'
+put 'accesslog', 1', 'info:referer', 'jim'
+put 'accesslog', 1', 'info:browser_cookie', 'cookie'
+put 'accesslog', 1', 'info:loginid', 'whatintheworld'
+
+
+status
+status 'simple'
+status 'summary'
+status 'detailed'
+version
+whoami
+
+alter 'location', 'census information'
+alter 'student', 'background'
+alter 'course', 'background'
+alter 'user_action', 'event'
+alter 'user_friends', 'groups'
+alter 'accesslog', 'type'
+
+describe 'location'
+describe 'student'
+describe 'course'
+describe 'user_action'
+describe 'user_friends'
+describe 'accesslog'
+
+list
+
+delete 'location', '1', 'name'
+delete 'student', '1', 'name'
+delete 'course', '1', 'title'
+delete 'user_action', '1', 'user_id'
+delete 'user_friends', '1', 'name'
+delete 'accesslog', '1', 'ip'
+
+get 'location', '1', 'parent'
+get 'student', '1', 'age'
+get 'course', '1', 'introduction'
+get 'user_action', '1', 'name'
+get 'user_friends', '1', 'age'
+get 'accesslog', '1', 'domain'
+
+balancer
+
+balance_switch true
+balance_switch false
+
+split 'location'
+split 'student'
+split 'course'
+split 'user_action'
+split 'user_friends'
+split 'accesslog'
+
+
+
+
+
+
+
+
+
+
