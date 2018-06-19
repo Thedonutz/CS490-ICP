@@ -1,6 +1,6 @@
 <project>
 	<modelVersion>4.0.0</modelVersion>
-    <groupId>com.lendap.hadoop</groupId>
+    <groupId>com.matrix</groupId>
 	<artifactId>MatrixMultiply</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 	<distributionManagement>
